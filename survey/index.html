@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="heading">
+    <h1>Questionnaire Form</h1>
+    </div>
+    
+<section class="feedback-section"  >
+  <form method="POST" action="process_form.php" onsubmit="saveFeedback(event)">
+    
+  
+    <div class="question1" id="question-1" class="question">
+      <label>Q1. What's your overall impression of our GIS site?</label><br><br>
+      
+      <input type="radio" name="overall_impression" value="Very Impressed" onclick="showQuestion(2, 'Very Impressed')">Very Impressed</button><br><br>
+      <input type="radio" name="overall_impression" value="Impressed" onclick="showQuestion(2, 'Impressed')">Impressed</button><br><br>
+      <input type="radio" name="overall_impression" value="Neutral" onclick="showQuestion(2, 'Neutral')">Neutral</button><br><br>
+      <input type="radio" name="overall_impression" value="Not Impressed" onclick="showQuestion(2, 'Not Impressed')">Not Impressed</button>
+    </div>
+    
+    <div class="question2" id="question-2" class="question" style="display: none;">
+      <label>Q2. What's the best thing about the site?</label><br><br>
+      <textarea name="best_thing" id="answer-2" rows="4" cols="50"></textarea><br><br>
+      <button type="button" onclick="showQuestion(3, document.getElementById('answer-2'))">OK</button>
+    </div>
+    
+    <div class="question3" id="question-3" class="question" style="display: none;">
+      <label>Q3. What do you think could still be improved?</label><br><br>
+      <textarea name="improvements" id="answer-3" rows="4" cols="50"></textarea><br><br>
+      <button type="button" onclick="showQuestion(4, document.getElementById('answer-3'))">OK</button>
+    </div>
+    
+    <div class="question4" id="question-4" class="question" style="display: none;">
+      <label>Q4. How easy was it to find what you were looking for on the site?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="ease_of_finding" value="Very Easy" onclick="showQuestion(5, 'Very Easy')">Very Easy</button><br><br>
+      <input type="radio" name="ease_of_finding" value="Easy" onclick="showQuestion(5, 'Easy')">Easy</button><br><br>
+      <input type="radio" name="ease_of_finding" value="Difficult" onclick="showQuestion(5, 'Difficult')">Difficult</button><br><br>
+      <input type="radio" name="ease_of_finding" value="Very Difficult" onclick="showQuestion(5, 'Very Difficult')">Very Difficult</button>
+      </div>
+    </div>
+    
+    <div class="question5" id="question-5" class="question" style="display: none;">
+      <label>Q5. On your last visit, was the website faster or slower than you expected at giving you what you were looking for?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="website_speed" value="Faster" onclick="showQuestion(6, 'Faster')">Faster</button><br><br>
+      <input type="radio" name="website_speed" value="Slower" onclick="showQuestion(6, 'Slower')">Slower</button><br><br>
+      <input type="radio" name="website_speed" value="As Expected" onclick="showQuestion(6, 'As Expected')">As Expected</button>
+    </div>
+    </div>
+    
+    <div  class="question6" id="question-6" class="question" style="display: none;">
+      <label>Q6. How nice-looking was our site?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="site_appearance" value="Very Nice" onclick="showQuestion(7, 'Very Nice')">Very Nice</button><br><br>
+      <input type="radio" name="site_appearance" value="Nice" onclick="showQuestion(7, 'Nice')">Nice</button><br><br>
+      <input type="radio" name="site_appearance" value="Average" onclick="showQuestion(7, 'Average')">Average</button><br><br>
+      <input type="radio" name="site_appearance" value="Not Nice" onclick="showQuestion(7, 'Not Nice')">Not Nice</button>
+    </div>
+    </div>
+    
+    <div class="question7" id="question-7" class="question" style="display: none;">
+      <label>Q7. How easy was it to understand the information on the site?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="understanding" value="Very Easy" onclick="showQuestion(8, 'Very Easy')">Very Easy</button><br><br>
+      <input type="radio" name="understanding" value="Easy" onclick="showQuestion(8, 'Easy')">Easy</button><br><br>
+      <input type="radio" name="understanding" value="Difficult" onclick="showQuestion(8, 'Difficult')">Difficult</button><br><br>
+      <input type="radio" name="understanding" value="Very Difficult" onclick="showQuestion(8, 'Very Difficult')">Very Difficult</button>
+    </div>
+    </div>
+    
+    <div class="question8" id="question-8" class="question" style="display: none;">
+      <label>Q8. Did you trust the information on our website?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="trust_information" value="Yes" onclick="showQuestion(9, 'Yes')">Yes</button><br><br>
+      <input type="radio" name="trust_information" value="No" onclick="showQuestion(9, 'No')">No</button>
+      </div>
+    </div>
+    
+    <div class="question9" id="question-9" class="question" style="display: none;">
+      <label>Q9. What would make you trust the information more?</label><br><br>
+      <textarea name="factors_to_increase_trust" id="answer-9" rows="4" cols="50"></textarea><br><br>
+      <button type="button"  onclick="showQuestion(10, document.getElementById('answer-9'))">OK</button>
+    </div>
+    
+    <div class="question10" id="question-10" class="question" style="display: none;">
+      <label>Q10. How likely are you to recommend our website to someone you know or an organization?</label><br><br>
+      <div class="radio-button">
+      <input type="radio" name="likelihood_recommendation" value="Very Likely" onclick="showQuestion(11, 'Very Likely')">Very Likely</button><br><br>
+      <input type="radio" name="likelihood_recommendation" value="Likely" onclick="showQuestion(11, 'Likely')">Likely</button><br><br>
+      <input type="radio" name="likelihood_recommendation" value="Neutral" onclick="showQuestion(11, 'Neutral')">Neutral</button><br><br>
+      <input type="radio" name="likelihood_recommendation" value="Unlikely" onclick="showQuestion(11, 'Unlikely')">Unlikely</button><br><br>
+      <input type="radio" name="likelihood_recommendation" value="Very Unlikely" onclick="showQuestion(11, 'Very Unlikely')">Very Unlikely</button>
+      </div>
+    </div>
+    
+    <div class="question11" id="question-11" class="question" style="display: none;">
+      <label>Thank you so much for your feedback. It's instrumental in helping us improve.</label><br><br>
+      <button type="submit">Submit</button>
+    </div>
+     <script>
+    var currentQuestion = 1;
+    
+    function showQuestion(questionNumber, answer) {
+      var currentQuestionElement = document.getElementById("question-" + currentQuestion);
+      currentQuestionElement.style.display = "none";
+      
+     
+      currentQuestion = questionNumber;
+      
+      var nextQuestionElement = document.getElementById("question-" + currentQuestion);
+      nextQuestionElement.style.display = "block";
+      
+      var nextButton = document.getElementById("next-button");
+      
+      if (questionNumber === 11) {
+        nextButton.style.display = "none";
+      } else {
+        nextButton.style.display = "inline-block";
+      }
+    }
+    
+    function nextQuestion() {
+      var currentQuestionElement = document.getElementById("question-" + currentQuestion);
+      currentQuestionElement.style.display = "none";
+      
+      currentQuestion++;
+      
+      var nextQuestionElement = document.getElementById("question-" + currentQuestion);
+      nextQuestionElement.style.display = "block";
+      
+      var nextButton = document.getElementById("next-button");
+      
+      if (currentQuestion === 11) {
+        nextButton.style.display = "none";
+      }
+    }
+   
+  </script>
+</form>
+</section>
+
+
+
+</body>
+</html>

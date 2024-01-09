@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+
+body{
+    height: 100vh;
+    background-color: rgb(167, 163, 163);
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+.feedback-section{
+    box-shadow: rgba(46, 139, 226, 0.89) 0px 2px 8px 0px;
+    padding: 3.2rem;
+    height: 900px;
+    width: 450px;
+   
+}
+
+
+
+.heading {
+    text-align: top;
+    margin-bottom: 30px;
+  }
+  
+  .question {
+
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:5px;
+  }
+  
+  
+  
+  textarea {
+    width: 100%;
+    resize: vertical;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: #f3efef;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1298e6;
+    transform: scale(1.1);
+  }
+
+  /* Hide the browser's default radio button */
+  input[type="radio"] {
+    opacity: 1; /* Set opacity to 1 to make the radio button visible */
+    position: relative; /* Set position to relative */
+    top: auto; /* Set top to auto */
+    left: auto; /* Set left to auto */
+    width: 20px;
+    height: 20px;
+  }
+
+/* Style the label */
+label {
+  display: block;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="radio"]:not(:disabled):hover {
+  background-color: #37b7ce;
+  transform: scale(1.1);
+}
+
+
+/* Style the "Next" button */
+#next-button {
+  display: inline-block;
+}
+
+/* Style the feedback section */
+.feedback-section {
+  margin-top: 30px;
+}
+
+/* Style the heading */
+.heading {
+  text-align: center;
+}
+
+/* Style the questions */
+.question {
+  display: none;
+  margin-top: 20px;
+}
